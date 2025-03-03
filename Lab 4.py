@@ -56,11 +56,10 @@ def smallestval(node:BTNode):
 def HasGGC(node:BTNode):
     if node is None:
         return 0 #will never be MAX, doesn't affect result if None
-    
+    height = 1
     h1 = HasGGC(node.left)
     h2 = HasGGC(node.right)
 
-    height = 1
     height = max(h1 + 1,h2 + 1,height) #compare v1, v2 and current val to get largest of three
 
     if height >= 4:
